@@ -32,6 +32,7 @@ def _main_func():
         wav_root = case.get_value("COMP_ROOT_DIR_WAV")
         gmake_j = case.get_value("GMAKE_J")
         gmake = case.get_value("GMAKE")
+        driver = case.get_value("COMP_INTERFACE")
 
         #-------------------------------------------------------
         # create Filepath file
@@ -41,8 +42,7 @@ def _main_func():
             caseroot = case.get_value("CASEROOT")
             paths = [os.path.join(caseroot,"SourceMods","src.ww3"),
                      os.path.join(wav_root,"src","source"),
-                     os.path.join(wav_root,"src","cpl_share"),
-                     os.path.join(wav_root,"src","cpl_mct")]
+                     os.path.join(wav_root,"src","cpl_" + driver)]
             with open(filepath_file, "w") as filepath:
                 filepath.write("\n".join(paths))
                 filepath.write("\n")
