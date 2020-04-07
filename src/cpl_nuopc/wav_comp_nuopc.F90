@@ -192,6 +192,8 @@ module wav_comp_nuopc
   private ! except
 
   public  :: SetServices
+  public  :: SetVM
+
   private :: InitializeP0
   private :: InitializeAdvertise
   private :: InitializeRealize
